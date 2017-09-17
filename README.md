@@ -5,7 +5,9 @@
 ScrollMagic and GSAP. Creating a responsive design, specifically keeping the page intact when resizing, was unexpectedly challenging 
 since some features of ScrollMagic didn't readily support responsive units. This project also includes a bit of SVG - I had to combine
 multiple SVG elements to create the load animation. 
+<br />
 <br />Check it out at https://jx2bandito.github.io/lampshadeHangers/.
+<br />
 <br />Originally made in Codepen: https://codepen.io/jx2bandito/pen/GmrEaO.
 
 ### User Stories: <br />
