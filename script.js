@@ -887,13 +887,21 @@ $(document).ready(function() {
     $.each(shopArray, function(index, l) {
       total = total + l.price * l.inCart;
     });
-
     $priceTotal.html("$" + (Math.round(total * 100) / 100).toFixed(2));
   }
 
   $(document).on("click", ".addCart", function() {
-    let elemObj = eval($(this).attr("object-name"));
-
+    let $this = $(this);
+	let elemString = $this.attr("object-name");
+	let elemObj = null;
+	
+	for(var i = 0; i < lamps.length; i++){
+		if(lamps[i].objectName == elemString ){
+			elemObj = lamps[i];
+			break;
+		}
+	}
+	
     if (elemObj.stock() === 0) {
       return;
     }
@@ -905,16 +913,25 @@ $(document).ready(function() {
     }
 
     elemObj.inCart++;
-    $(this).siblings().find(".stockNum").html(elemObj.stock());
+    $this.siblings().find(".stockNum").html(elemObj.stock());
   });
 
   $shopSheet.on("submit", ".shopPrice", function(event) {
     event.preventDefault();
-    var thisItem = $(this).parent().parent();
-    var elemObj = eval(thisItem.attr("object-name"));
-    elemObj.inCart = Number(thisItem.find("input").val());
+    let $thisItem = $(this).parent().parent();
+	let elemString = $thisItem.attr("object-name");
+	let elemObj = null;
+	
+	for(var i = 0; i < lamps.length; i++){
+		if(lamps[i].objectName == elemString ){
+			elemObj = lamps[i];
+			break;
+		}
+	}
+	
+    elemObj.inCart = Number($thisItem.find("input").val());
 
-    $("button[object-name=" + thisItem.attr("object-name") + "]")
+    $("button[object-name=" + $thisItem.attr("object-name") + "]")
       .parent()
       .find(".stockNum")
       .html(elemObj.stock());
@@ -932,8 +949,17 @@ $(document).ready(function() {
   });
 
   $shopSheet.on("click", ".removeItem", function() {
-    var thisSheet = $(this).parent().parent();
-    let elemObj = eval(thisSheet.attr("object-name"));
+    var $thisSheet = $(this).parent().parent();
+	let elemString = $thisSheet.attr("object-name");
+	let elemObj = null;
+	
+	for(var i = 0; i < lamps.length; i++){
+		if(lamps[i].objectName == elemString ){
+			elemObj = lamps[i];
+			break;
+		}
+	}
+	
     elemObj.inCart = 0;
 
     $("button[object-name=" + elemObj.objectName + "]")
@@ -943,7 +969,7 @@ $(document).ready(function() {
     if (shopArray.indexOf(elemObj) > -1) {
       shopArray.splice(shopArray.indexOf(elemObj), 1);
     }
-    $(thisSheet).hide("fade", function() {
+    $thisSheet.hide("fade", function() {
       defineCart();
     });
   });
