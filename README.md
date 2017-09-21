@@ -1,12 +1,12 @@
 # Lampshade Hangers Co.<br />
 
 
-&nbsp;&nbsp;&nbsp;Lampsahde Hangers Co. is a fake website for a fake company. For this project, I wanted to experiment with combining 
+&nbsp;&nbsp;&nbsp;Lampshade Hangers Co. is a fake website for a fake company. For this project, I wanted to experiment with combining 
 ScrollMagic and GSAP. Creating a responsive design, specifically keeping the page intact when resizing, was unexpectedly challenging 
 since some features of ScrollMagic didn't readily support responsive units. This project also includes a bit of SVG - I had to combine
 multiple SVG elements to create the load animation. 
 <br />
-<br />Project page: https://jx2bandito.github.io/lampshadeHangers/.
+<br />Project page: https://jx2bandito.github.io/lampshadeHangers/
 <br />
 
 
