@@ -313,7 +313,7 @@ $(window).on("load", function() {
         15,
         {
           autoAlpha: 0,
-          delay: 8,
+          delay: 30,
           borderBottomWidth: "2em",
           borderTopWidth: "2em",
           backgroundColor: "gray",
@@ -422,6 +422,7 @@ $(window).on("load", function() {
         cycle: {
           rotation: ["80%", "-80%", "80%", "-80%"]
         },
+		scale: 0,
         autoAlpha: 0,
         ease:Back.easeOut
       }, 5)
