@@ -313,7 +313,7 @@ $(window).on("load", function() {
         15,
         {
           autoAlpha: 0,
-          delay: 30,
+          delay: 20,
           borderBottomWidth: "2em",
           borderTopWidth: "2em",
           backgroundColor: "gray",
